@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    my_string_list = list(my_string)
-    index_count = 0
-    for index in my_string_list:
-        if index == 'c' or index == 'C':
-            my_string_list[index_count] = ""
-            index_count += 1
-            return "".join(my_string_list)
+
+    a = 0
+
+    new_str = my_string[:]
+
+    for i in range(len(my_string)):
+        if (my_string[i] == 'C' or my_string[i] == 'c'):
+            new_str = new_str[:(i - a)] + my_string[(i + 1):]
+            a += 1
+
+    return (new_str)
