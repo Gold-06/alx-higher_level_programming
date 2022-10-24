@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""MyList
+""" defines class Mylist
 """
 
 
-class MyList(list):
-    """Contains list
+class Mylist(list):
+    """ class that inherits from list
     """
 
     def print_sorted(self):
-        """Prints self in sorted format
+        """ func print_sorted
         """
-
         print(sorted(self))
