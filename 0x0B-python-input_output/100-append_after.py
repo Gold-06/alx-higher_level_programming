@@ -1,20 +1,17 @@
 #!/usr/bin/python3
-"""append_after
+""" function that append a new line
 """
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """Insert new_string after search_string into filename
+    """ function append_after(filename="", search_string="", new_string=""):
     """
+    _line = []
+    with open(filename, 'r', encoding="utf-8") as f:
+        for line in f:
+            _line += [line]
+            if line.find(search_string) != -1:
+                _line += [new_string]
 
-    with open(filename, mode="r+", encoding="utf-8") as readFile:
-        temp = readFile.readlines()
-
-    count = 0
-    with open(filename, mode="w", encoding="utf-8") as writeFile:
-        for lines in temp:
-            count += 1
-            if search_string in lines:
-                temp.insert(count, new_string)
-        for lines in temp:
-            writeFile.write(lines)
+    with open(filename, 'w', encoding="utf-8") as f:
+        f.write("".json(_line))
